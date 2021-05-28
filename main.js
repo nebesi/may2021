@@ -13,14 +13,14 @@ const renderProduct = (title, price) => {
               </div>`;
 }
 
-const field = document.querySelector('.products');
+const field = () => document.querySelector('.products');
 
 const renderProducts = (list = []) => {
+    const container = field();
     list.forEach(element => {
         const { title, price } = element;
-        field.insertAdjacentHTML('afterbegin', renderProduct(title, price))
+        container.insertAdjacentHTML('afterbegin', renderProduct(title, price))
     })
 }
-
 
 renderProducts(products);
